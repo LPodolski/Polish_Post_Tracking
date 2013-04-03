@@ -8,7 +8,7 @@ namespace PolishPostTracking;
 class WseAuthSoapHeader extends \SoapHeader {
 
 	/**
-	 * wss namespace reference
+	 * WSS namespace reference
 	 *
 	 * @var string
 	 */

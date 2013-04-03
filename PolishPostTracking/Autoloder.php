@@ -10,11 +10,8 @@ spl_autoload_register(function( $_className ) {
 		return false;
 	}
 
-	// class name from camelCase to underscore + .php
-	$fileName = strtolower(
-					preg_replace( '/([a-z])([A-Z])/', '$1_$2', $_className )
-				)
-				. '.php';
+	// classname to path,  replace \ to / and add .php
+	$fileName = str_replace( '\\', '/', $_className ) . '.php';
 
 	if( file_exists( $fileName ) ) {
 		include $fileName;
