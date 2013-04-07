@@ -14,13 +14,10 @@
 						"Polish Post",
 						"tracking",
 						"monitoring",
-						"package",
+						"package"
 					],
 	"homepage": 	"https://github.com/LPodolski/Polish_Post_Tracking",
 	"license": 		"MIT",
-	"require": {
-		"predis/predis": "v0.2"
-	},
 	"authors": [
 		{
 			"name": 	"LPodolski",
