@@ -1,12 +1,12 @@
 {
-	"name": 		"PolishPostTracking",
+	"name": 		"polish_post_tracking/polish_post_tracking",
 	"type": 		"library",
 	"description": 	"Class to tracking package sent by Polish Post Office",
 	"keywords": 	[
 
 						"Poczta Polska",
-						"śledzienie",
-						"przesyłki",
+						"sledzienie",
+						"przesylki",
 						"paczki",
 						"listu poleconego",
 						"monitorowanie",
