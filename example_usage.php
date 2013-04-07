@@ -5,10 +5,16 @@ error_reporting( E_ALL | E_STRICT );
 
 require_once 'PolishPostTracking/Autoloder.php';
 
-$PolishPostApi 		= new \PolishPostTracking\Api;
-$packageTracking 	= $PolishPostApi->checkPackage( '00259007733174854852' );
+try {
 
-// apply description to event codes, so instead of P_D you get "Doręczenie" in "opisZdarzenia" property
-\PolishPostTracking\EventMapper::applyMappingToCheckPackage( $packageTracking );
+	$PolishPostApi 		= new \PolishPostTracking\Api;
+	$packageTracking 	= $PolishPostApi->checkPackage( '00259007733174854852' );
 
-print_r( $packageTracking  );
+	print_r( $packageTracking  );
+
+} catch( \PolishPostTracking\Exception $E ) {
+	echo 'Error occurred';
+
+	// in production inform admin by email, save to log file
+	echo '<br> ' . $E->getMessage();
+}

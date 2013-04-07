@@ -5,13 +5,21 @@ Klasa do śledzenia przesyłki wysłanej poprzez Poczte Polską.
 
 Example usage ( also in example_usage.php file ):
 
-  $PolishPostApi 		= new \PolishPostTracking\Api;
-	$packageTracking 	= $PolishPostApi->checkPackage( '00259007733174854852' );
+	require_once 'PolishPostTracking/Autoloder.php';
 
-	// apply description to event codes, so instead of P_D you get "Doręczenie" in "opisZdarzenia" property
-	\PolishPostTracking\EventMapper::applyMappingToCheckPackage( $packageTracking );
+	try {
 
-	print_r( $packageTracking  );
+		$PolishPostApi 		= new \PolishPostTracking\Api;
+		$packageTracking 	= $PolishPostApi->checkPackage( '00259007733174854852' );
+
+		print_r( $packageTracking  );
+
+	} catch( \PolishPostTracking\Exception $E ) {
+		echo 'Error occurred';
+
+		// in production inform admin by email, save to log file
+		echo '<br> ' . $E->getMessage();
+	}
 
 Example return:
 
