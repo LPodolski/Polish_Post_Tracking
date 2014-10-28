@@ -9,16 +9,15 @@ Example usage ( also in example_usage.php file ):
 
 	try {
 
-		$PolishPostApi 		= new \PolishPostTracking\Api;
-		$packageTracking 	= $PolishPostApi->checkPackage( '00259007733174854852' );
+		$PolishPostApi   = new \PolishPostTracking\Api;
+		$packageTracking = $PolishPostApi->checkPackage('testp0');
 
-		print_r( $packageTracking  );
+		var_dump($packageTracking);
 
-	} catch( \PolishPostTracking\Exception $E ) {
-		echo 'Error occurred';
+	} catch (\PolishPostTracking\Exception $E) {
 
 		// in production inform admin by email, save to log file
-		echo '<br> ' . $E->getMessage();
+		echo $E->getMessage();
 	}
 
 Example return:
