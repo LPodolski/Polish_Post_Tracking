@@ -1,8 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:ns1="http://org.apache.axis2/xsd" xmlns:ns="http://sledzenie.pocztapolska.pl" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:ax21="http://ws.sledzenie.pocztapolska.pl/xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://sledzenie.pocztapolska.pl">
-    <wsdl:documentation>Sledzenie przesylek Poczty Polskiej S.A. dla klientow indywidualnych. - 0.57 </wsdl:documentation>
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+                  xmlns:ns="http://sledzenie.pocztapolska.pl" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+                  xmlns:http="http://schemas.xmlsoap.org/wsdl/http/"
+                  xmlns:ax21="http://ws.sledzenie.pocztapolska.pl/xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                  xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+                  targetNamespace="http://sledzenie.pocztapolska.pl">
+    <wsdl:documentation>Sledzenie przesylek Poczty Polskiej S.A. dla klientow indywidualnych. - 0.57
+    </wsdl:documentation>
     <wsdl:types>
-        <xs:schema xmlns:ax22="http://ws.sledzenie.pocztapolska.pl/xsd" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://sledzenie.pocztapolska.pl">
+        <xs:schema xmlns:ax22="http://ws.sledzenie.pocztapolska.pl/xsd" attributeFormDefault="qualified"
+                   elementFormDefault="qualified" targetNamespace="http://sledzenie.pocztapolska.pl">
             <xs:import namespace="http://ws.sledzenie.pocztapolska.pl/xsd"/>
             <xs:element name="maksymalnaLiczbaPrzesylekResponse">
                 <xs:complexType>
@@ -121,7 +128,8 @@
                 </xs:complexType>
             </xs:element>
         </xs:schema>
-        <xs:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://ws.sledzenie.pocztapolska.pl/xsd">
+        <xs:schema attributeFormDefault="qualified" elementFormDefault="qualified"
+                   targetNamespace="http://ws.sledzenie.pocztapolska.pl/xsd">
             <xs:complexType name="Przesylka">
                 <xs:sequence>
                     <xs:element minOccurs="0" name="danePrzesylki" nillable="true" type="ax21:DanePrzesylki"/>
@@ -179,7 +187,8 @@
             </xs:complexType>
             <xs:complexType name="ListaZdarzen">
                 <xs:sequence>
-                    <xs:element maxOccurs="unbounded" minOccurs="0" name="zdarzenie" nillable="true" type="ax21:Zdarzenie"/>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="zdarzenie" nillable="true"
+                                type="ax21:Zdarzenie"/>
                 </xs:sequence>
             </xs:complexType>
             <xs:complexType name="Zdarzenie">
@@ -206,7 +215,8 @@
             </xs:complexType>
             <xs:complexType name="ListaPrzesylek">
                 <xs:sequence>
-                    <xs:element maxOccurs="unbounded" minOccurs="0" name="przesylka" nillable="true" type="ax21:Przesylka"/>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="przesylka" nillable="true"
+                                type="ax21:Przesylka"/>
                 </xs:sequence>
             </xs:complexType>
         </xs:schema>
@@ -280,7 +290,8 @@
         </wsdl:operation>
         <wsdl:operation name="maksymalnaLiczbaPrzesylek">
             <wsdl:input message="ns:maksymalnaLiczbaPrzesylekRequest" wsaw:Action="urn:maksymalnaLiczbaPrzesylek"/>
-            <wsdl:output message="ns:maksymalnaLiczbaPrzesylekResponse" wsaw:Action="urn:maksymalnaLiczbaPrzesylekResponse"/>
+            <wsdl:output message="ns:maksymalnaLiczbaPrzesylekResponse"
+                         wsaw:Action="urn:maksymalnaLiczbaPrzesylekResponse"/>
         </wsdl:operation>
         <wsdl:operation name="sprawdzPrzesylke">
             <wsdl:input message="ns:sprawdzPrzesylkeRequest" wsaw:Action="urn:sprawdzPrzesylke"/>
@@ -469,7 +480,8 @@
     </wsdl:binding>
     <wsdl:service name="Sledzenie">
         <wsdl:port name="SledzenieHttpSoap11Endpoint" binding="ns:SledzenieSoap11Binding">
-            <soap:address location="https://tt.poczta-polska.pl/Sledzenie/services/Sledzenie.SledzenieHttpSoap11Endpoint/"/>
+            <soap:address
+                    location="https://tt.poczta-polska.pl/Sledzenie/services/Sledzenie.SledzenieHttpSoap11Endpoint/"/>
         </wsdl:port>
         <wsdl:port name="SledzenieHttpEndpoint" binding="ns:SledzenieHttpBinding">
             <http:address location="https://tt.poczta-polska.pl/Sledzenie/services/Sledzenie.SledzenieHttpEndpoint/"/>

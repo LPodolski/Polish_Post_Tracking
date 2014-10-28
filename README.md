@@ -24,3 +24,7 @@ Example usage ( also in example_usage.php file ):
 Example return:
 
 http://pastebin.com/XkFQBxDG
+
+-----
+Task it handles:
+poczta polska, śledzenie poczta polska, php
